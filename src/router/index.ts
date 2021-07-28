@@ -20,7 +20,8 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/splash",
     name: "Splash",
-    component: Home,
+    component: () =>
+      import("../components/Splash.vue"),
   },
 ];
 

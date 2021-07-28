@@ -1,13 +1,12 @@
 <template>
 <div>
   <h1>{{ site_name }}</h1>
+  <h2>{{ msg }}</h2>
 </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import { computed } from 'vue'
-import { useStore } from 'vuex'
 
 @Options({
   props: {
@@ -15,7 +14,7 @@ import { useStore } from 'vuex'
   },
 })
 
-export default class Contact extends Vue {
-    site_name = "WorldAnchor";
+export default class Splash extends Vue {
+    site_name = window.location.origin;
 }
 </script>

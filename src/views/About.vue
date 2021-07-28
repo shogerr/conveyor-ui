@@ -1,19 +1,17 @@
 <template>
   <div class="about">
-    <h1>{{ site_name }}</h1>
+    <splash msg='Splash Message'/>
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import Contact from "@/components/Contact.vue"; // @ is an alias to /src
+import Splash from "@/components/Splash.vue"; // @ is an alias to /src
 
 @Options({
   components: {
-    Contact,
+    Splash,
   },
 })
-export default class About extends Vue {
-  site_name = "World-Anchor"
-}
+export default class About extends Vue {}
 </script>
