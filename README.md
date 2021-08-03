@@ -1,4 +1,4 @@
-# conveyor-vue
+# conveyor-ui
 
 ## Project setup
 ```
