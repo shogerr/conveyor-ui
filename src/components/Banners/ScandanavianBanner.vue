@@ -45,10 +45,10 @@ export default class Banner extends Vue {
   splitString(str: string) {
     return str.split("");
   }
-  created() {
+  created(): void {
     console.log(`${this.message}`);
   }
-  onMounted() {
+  onMounted(): void {
     console.log(`${this.message}`);
   }
 }

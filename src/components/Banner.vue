@@ -18,21 +18,22 @@ import Emoji from "@/components/Banners/Emoji.vue";
 })
 export default class Banner extends Vue {
   subtitle = "Second Message";
+
   message!: string;
 
-  get splitMessage() {
+  get splitMessage(): Array<unknown> {
     return this.message.split("");
   }
 
-  randomInt(max: number) {
+  randomInt(max: number): number {
     return Math.floor(Math.random() * max);
   }
 
-  splitString(str: string) {
+  splitString(str: string): Array<unknown> {
     return str.split("");
   }
 
-  mounted() {
+  mounted(): void {
     console.log("mounted");
   }
 }
