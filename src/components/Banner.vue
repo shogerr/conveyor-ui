@@ -41,7 +41,8 @@ export default class Banner extends Vue {
 <style scoped lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Ewert&display=swap");
 h1 {
-  font-size: 10em;
+font-weight: 800;
+  font-size: 5em;
   //font-family: 'Ewert';
 }
 </style>

@@ -1,8 +1,7 @@
 <template>
   <div class="about">
-    <banner message="Banner Message" />
+    <banner :message="site_name" />
     <splash msg="Splash Message" />
-    <counter />
   </div>
 </template>
 
@@ -10,14 +9,14 @@
 import { Options, Vue } from "vue-class-component";
 import Splash from "@/components/Splash.vue"; // @ is an alias to /src
 import Banner from "@/components/Banner.vue";
-import Counter from "@/components/Counter.vue";
 
 @Options({
   components: {
     Splash,
     Banner,
-    Counter,
   },
 })
-export default class About extends Vue {}
+export default class About extends Vue {
+  site_name = window.location.origin;
+}
 </script>
