@@ -13,10 +13,9 @@
           </span>
         </div>
       </div>
-      <template v-for="n in 63" :key="n">
+      <template v-for="n in 31" :key="n + 1">
         <div class="block" :class="'style-' + randomInt(13)" />
       </template>
-      <div class="block style-13" />
       <div class="block block-last" />
     </div>
   </div>
@@ -34,21 +33,22 @@ export default class Banner extends Vue {
   subtitle = "Second Message";
   message!: "Private Message";
 
-  get splitMessage() {
+  get splitMessage(): Array<string> {
+    console.log(this.message);
     return this.message.split("");
   }
 
-  randomInt(max: number) {
+  randomInt(max: number): number {
     return Math.floor(Math.random() * max);
   }
 
-  splitString(str: string) {
+  splitString(str: string): Array<string> {
     return str.split("");
   }
-  created() {
+  created(): void {
     console.log(`${this.message}`);
   }
-  onMounted() {
+  onMounted(): void {
     console.log(`${this.message}`);
   }
 }
@@ -61,12 +61,12 @@ h1 {
   //font-family: 'Ewert';
 }
 
-$gray-lighter: #f7f7f7;
-$gray-light: #dbdbdd;
-$gray-dark: #aeafb3;
-$gray-darker: #454547;
-$pink: #e89d93;
-$yellow: #eec71a;
+$gray-lighter: #ffffff;
+$gray-light: #4444ad;
+$gray-dark: #242d4f;
+$gray-darker: #454555;
+$pink: #ff7b00;
+$yellow: #fff2b9;
 
 $block-length: 125px;
 $col-num: 7;
@@ -79,7 +79,7 @@ $col-num: 7;
 }
 .wrap {
   background: $gray-lighter;
-  margin-top: 50px;
+  margin-top: 0px;
   margin-bottom: 50px;
   width: $block-length * $col-num;
   border-radius: 5px;
@@ -90,9 +90,9 @@ $col-num: 7;
 .block-title {
   background: $gray-lighter;
   grid-column-start: 2;
-  grid-column-end: -1;
-  grid-row-start: $col-num - 1;
-  grid-row-end: $col-num + 1;
+  grid-column-end: $col-num;
+  grid-row-start: 2;
+  grid-row-end: 4;
   display: flex;
   padding: 3em 3.5em;
   transition: padding 0.3s linear;
@@ -131,15 +131,16 @@ $col-num: 7;
 .block {
   width: $block-length;
   height: $block-length;
+  background-repeat: repeat;
 }
 .style-1 {
   background: $gray-darker;
 }
 .style-2 {
   //opting for classic css triangles technique here rather than backgrounds, just because
-  width: 0;
-  height: 0;
-  border: $block-length/2 solid $gray-lighter;
+  //width: 0;
+  //height: 0;
+  border: ($block-length - 1)/2 solid $gray-lighter;
   border-top-color: $gray-dark;
   border-bottom-color: $gray-dark;
   //to account for a pixel-rounding annoyance:

@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import Splash from "@/components/Splash.vue"; // @ is an alias to /src
+import Splash from "@/views/Splash.vue"; // @ is an alias to /src
 import Banner from "@/components/Banner.vue";
 
 @Options({

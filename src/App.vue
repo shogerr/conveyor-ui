@@ -1,7 +1,8 @@
 <template>
-  <v-app>
+  <v-app :theme="'dark'">
     <v-main>
       <router-link to="/about">1️⃣</router-link>
+      <router-link to="/splash">1️⃣</router-link>
       <router-view />
     </v-main>
   </v-app>

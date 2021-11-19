@@ -4,6 +4,3 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
-
-//declare module 'troika-3d-text'
-//declare module 'troika-3d'

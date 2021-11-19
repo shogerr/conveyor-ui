@@ -1,16 +1,20 @@
 <template>
-  <emoji>
-    <h1>{{ message }}</h1>
-  </emoji>
+  <component :is="bannerStyle" :message="message">
+    {{ message }}
+  </component>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 import Emoji from "@/components/Banners/Emoji.vue";
+import Scandanavian from "@/components/Banners/Scandanavian.vue";
+import RTVE from "@/components/Banners/RTVE.vue";
 
 @Options({
   components: {
     Emoji,
+    Scandanavian,
+    RTVE,
   },
   props: {
     message: String,
@@ -20,29 +24,13 @@ export default class Banner extends Vue {
   subtitle = "Second Message";
   message!: string;
 
-  get splitMessage() {
-    return this.message.split("");
+  get bannerStyle(): string {
+    console.log(this.$options);
+    return "RTVE";
   }
 
-  randomInt(max: number) {
-    return Math.floor(Math.random() * max);
-  }
-
-  splitString(str: string) {
-    return str.split("");
-  }
-
-  mounted() {
-    console.log("mounted");
+  mounted(): void {
+    console.log("Mounted a banner.");
   }
 }
 </script>
-
-<style scoped lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Ewert&display=swap");
-h1 {
-font-weight: 800;
-  font-size: 5em;
-  //font-family: 'Ewert';
-}
-</style>

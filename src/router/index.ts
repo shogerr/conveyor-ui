@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../views/Home.vue";
-import Footer from "../views/Footer.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -20,7 +19,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/splash",
     name: "Splash",
-    component: () => import("../components/Splash.vue"),
+    component: () => import("../views/Splash.vue"),
   },
 ];
 
